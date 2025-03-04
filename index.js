@@ -3,8 +3,8 @@ const { AtpAgent, RichText } = require("@atproto/api");
 async function sendPost(text) {
 	const agent = new AtpAgent({ service: "https://bsky.social" });
 	await agent.login({
-		identifier: "YOUR_IDENTIFIER_HERE",
-		password: "YOUR_PASSWORD_HERE",
+		identifier: "${{ env.PODRACING_IDENTIFIER }}",
+		password: "${{ secrets.PODRACING_PASSWORD }}",
 	});
 	const richText = new RichText({ text });
 	await richText.detectFacets(agent);
