@@ -1,0 +1,27 @@
+{
+	"name": "TheLyttonTribune",
+	"version": "0.0.1",
+	"description": "Welcome to Lytton! It's safer, here.",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"start": "node main.js"
+	},
+	"dependencies": {
+		"canvas": "^2.11.1",
+		"express": "^4.18.3",
+		"mastodon": "^1.2.2",
+		"tracery-grammar": "^2.x"
+	},
+	"repository": {
+		"url": "https://glitch.com/edit/#!/the-lytton-tribune"
+	},
+	"license": "MIT",
+	"keywords": [
+		"abolish",
+		"acab",
+		"activism",
+		"copaganda",
+		"defund"
+	]
+}
