@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nickfourtimes/bots#readme",
   "dependencies": {
-    "@atproto/api": "^0.14.7"
+    "@atproto/api": "^0.14.7",
+		"mastodon": "^1.2.2"
   }
 }
