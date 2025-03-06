@@ -17,8 +17,8 @@ import requests
 load_dotenv()
 
 # Bluesky credentials
-BLUESKY_USERNAME = os.getenv("BLUESKY_USERNAME")
-BLUESKY_PASSWORD = os.getenv("BLUESKY_PASSWORD")
+BLUESKY_USERNAME = os.getenv("PODRACING_HANDLE")
+BLUESKY_PASSWORD = os.getenv("PODRACING_PASSWORD")
 
 API_URL = os.getenv("IMAGINE_URL")
 COPYPASTA_API_URL = os.getenv("IMAGINE_COPYPASTA_URL")
@@ -180,11 +180,11 @@ def on_message_handler(message: firehose_models.MessageFrame) -> None:
         process_operation(op, car, commit)
 
 
-def main() -> None:
-    client.login(BLUESKY_USERNAME, BLUESKY_PASSWORD)
-    print("🤖 Bot is listening")
-    firehose.start(on_message_handler)
+# def main() -> None:
+#     client.login(BLUESKY_USERNAME, BLUESKY_PASSWORD)
+#     print("🤖 Bot is listening")
+#     firehose.start(on_message_handler)
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

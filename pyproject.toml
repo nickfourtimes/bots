@@ -1,0 +1,18 @@
+[project]
+name = "bots"
+version = "0.1.0"
+description = "All of my butts"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "atproto (>=0.0.59,<0.0.60)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "requests (>=2.32.3,<3.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
