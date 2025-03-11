@@ -2,17 +2,7 @@ import os
 import requests
 import sys
 
-from atproto import (
-    CAR,
-    AtUri,
-    Client,
-    client_utils,
-    FirehoseSubscribeReposClient,
-    firehose_models,
-    models,
-    parse_subscribe_repos_message,
-)
-
+from atproto import Client
 from dotenv import load_dotenv
 from mastodon import Mastodon
 
@@ -73,9 +63,17 @@ def get_post():
 # poast!
 post = get_post()
 
-bsky = Client(BLUESKY_BASE_URL)
-bsky.login(BLUESKY_USERNAME, BLUESKY_APP_PASSWORD)
-bsky.send_post(post)
+try:
+    bsky = Client(BLUESKY_BASE_URL)
+    bsky.login(BLUESKY_USERNAME, BLUESKY_APP_PASSWORD)
+    bsky.send_post(post)
+    print("Posted to Bluesky.")
+except SystemError as e:
+    print(f"Error posting to Bluesky: {e}")
 
-masto = Mastodon(access_token=MASTO_ACCESS_TOKEN, api_base_url=MASTO_BASE_URL)
-masto.status_post(post)
+try:
+    masto = Mastodon(access_token=MASTO_ACCESS_TOKEN, api_base_url=MASTO_BASE_URL)
+    masto.status_post(post)
+    print("Posted to Mastodon.")
+except SystemError as e:
+    print(f"Error posting to Mastodon: {e}")
