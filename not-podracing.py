@@ -2,13 +2,31 @@ import os
 import requests
 import sys
 
+from atproto import (
+    CAR,
+    AtUri,
+    Client,
+    client_utils,
+    FirehoseSubscribeReposClient,
+    firehose_models,
+    models,
+    parse_subscribe_repos_message,
+)
+
 from dotenv import load_dotenv
 from mastodon import Mastodon
 
 # get vars
 load_dotenv()
-ACCESS_TOKEN = os.getenv("PODRACING_MASTO_ACCESS_TOKEN")
-BASE_URL = os.getenv("MASTO_BASE_URL")
+
+# Bluesky credentials
+BLUESKY_USERNAME = os.getenv("PODRACING_BSKY_HANDLE")
+BLUESKY_APP_PASSWORD = os.getenv("PODRACING_BSKY_PASSWORD")
+BLUESKY_BASE_URL = os.getenv("https://bsky.social")
+
+# Mastodon credentials
+MASTO_ACCESS_TOKEN = os.getenv("PODRACING_MASTO_ACCESS_TOKEN")
+MASTO_BASE_URL = os.getenv("MASTO_BASE_URL")
 
 
 def get_post():
@@ -34,7 +52,7 @@ def get_post():
     except requests.exceptions.RequestException as e:
         raise SystemExit(e)
 
-	# todo better error handling
+    # todo better error handling
     if response.status_code != 200 or response.json == "":
         print(f"wordnik error: {response.raise_for_status()}", file=sys.stderr)
     else:
@@ -53,5 +71,11 @@ def get_post():
 
 
 # poast!
-masto = Mastodon(access_token=ACCESS_TOKEN, api_base_url=BASE_URL)
-masto.status_post(get_post())
+post = get_post()
+
+bsky = Client(BLUESKY_BASE_URL)
+bsky.login(BLUESKY_USERNAME, BLUESKY_APP_PASSWORD)
+bsky.send_post(post)
+
+masto = Mastodon(access_token=MASTO_ACCESS_TOKEN, api_base_url=MASTO_BASE_URL)
+masto.status_post(post)
