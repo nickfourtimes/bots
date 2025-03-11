@@ -10,9 +10,9 @@ from mastodon import Mastodon
 load_dotenv()
 
 # Bluesky credentials
-BLUESKY_USERNAME = os.getenv("CHAMBERS_BSKY_HANDLE")
-BLUESKY_APP_PASSWORD = os.getenv("CHAMBERS_BSKY_PASSWORD")
-BLUESKY_BASE_URL = os.getenv("https://bsky.social")
+BSKY_USERNAME = os.getenv("CHAMBERS_BSKY_HANDLE")
+BSKY_APP_PASSWORD = os.getenv("CHAMBERS_BSKY_PASSWORD")
+BSKY_BASE_URL = os.getenv("BSKY_BASE_URL")
 
 # Mastodon credentials
 MASTO_ACCESS_TOKEN = os.getenv("CHAMBERS_MASTO_ACCESS_TOKEN")
@@ -64,8 +64,8 @@ def get_post():
 post = get_post()
 
 try:
-    bsky = Client(BLUESKY_BASE_URL)
-    bsky.login(BLUESKY_USERNAME, BLUESKY_APP_PASSWORD)
+    bsky = Client(BSKY_BASE_URL)
+    bsky.login(BSKY_USERNAME, BSKY_APP_PASSWORD)
     bsky.send_post(post)
     print("Posted to Bluesky.")
 except SystemError as e:
