@@ -1,0 +1,861 @@
+{
+  "anyMiddleStreet": [
+    "#stHoriMid#",
+    "#stVertNum#"
+  ],
+  "anyStreet": [
+    "#streetHorizontal#",
+    "#streetVertical#"
+  ],
+  "artEmoji": [
+    "#emojiGarageSale#",
+    "#emojiPoetry#"
+  ],
+  "artEvent": [
+    "#artEmoji# #artHead#\n\n#artLede# #artWrap#"
+  ],
+  "artGroup": [
+    "#fullName#",
+    "#orgName#"
+  ],
+  "artHead": [
+    "ART SHOW",
+    "GALLERY",
+    "VERNISSAGE"
+  ],
+  "artLede": [
+    "#artGroup# exhibiting their works.",
+    "From the collection of #artGroup#.",
+    "Sponsored by #artGroup#."
+  ],
+  "artWrap": [
+    "Complimentary #menuItems.s# provided.",
+    "#fullName# will speak.",
+    "#menuItems.s.capitalize# will be served.",
+    "Special emphasis on their #nouns.capitalize# period."
+  ],
+  "bakeSale": [
+    "#emojiBaking# #bakeSaleHead#\n\n#bakeSaleLede# #bakeSaleWrap#"
+  ],
+  "bakeSaleHead": [
+    "BAKE SALE",
+    "BAKED GOODS",
+    "BAKING CLUB",
+    "CAKE STALL",
+    "CAKES & TREATS"
+  ],
+  "bakeSaleLede": [
+    "#dayOfWeek# through #dayOfWeek#.",
+    "Raising funds for #orgName#."
+  ],
+  "bakeSaleWrap": [
+    "Allergy-aware options.",
+    "Contact #firstNames# (#phoneNumber#)",
+    "Donations welcome.",
+    "PWYC.",
+    "Thanks to all volunteers.",
+    "Volunteers welcome."
+  ],
+  "bloodDrive": [
+    "#emojiBlood# #bloodDriveHead#\n\n#bloodDriveLede# #bloodDriveWrap#"
+  ],
+  "bloodDriveHead": [
+    "BLOOD DRIVE",
+    "DONORS WANTED"
+  ],
+  "bloodDriveLede": [
+    "All are welcome.",
+    "#bloodType# in high demand.",
+    "In honor of #fullName#."
+  ],
+  "bloodDriveWrap": [
+    "BYOB.",
+    "Don't forget your cookie.",
+    "Local celebrities attending.",
+    "Every bit helps."
+  ],
+  "bloodType": [
+    "#bloodTypeABO##bloodTypePN#"
+  ],
+  "bloodTypeABO": [
+    "A",
+    "B",
+    "AB",
+    "O"
+  ],
+  "bloodTypePN": [
+    "+",
+    "-"
+  ],
+  "bertsPark": [
+    "#emojiPark# BERT'S PARK\n#parkDay#"
+  ],
+  "blueRoom": [
+    "#tastingNight# #dayOfWeek# @ The Blue Room",
+    "#emojiConf# SECRET MEETING\n#orgName# #dayOfWeek# @ The Blue Room. #gatheringWrap#"
+  ],
+  "caffeineWino": [
+    "#carolWilly#"
+  ],
+  "carAccident": [
+    "#emojiAccident# #carAccidentNoun.uppercase#\n\n#carAccidentLede# #carAccidentWrap#"
+  ],
+  "carAccidentAdj": [
+    "Grazing",
+    "Head-on",
+    "Mild",
+    "Multi-car",
+    "Serious"
+  ],
+  "carAccidentLede": [
+    "#carAccidentAdj# #carAccidentNoun# at #stIntersection#."
+  ],
+  "carAccidentNoun": [
+    "accident",
+    "collision",
+    "incident",
+    "traffic incident"
+  ],
+  "carAccidentWrap": [
+    "Crews responding.",
+    "EMTs on the scene.",
+    "No injuries."
+  ],
+  "carolWilly": [
+    "#carolWillyHead# #dayOfWeek# @ #carolWillyPlace#. #gatheringWrap#"
+  ],
+  "carolWillyHead": [
+    "#drinkAndDraw#",
+    "#tastingNight#"
+  ],
+  "carolWillyPlace": [
+    "Caffeine Carol's",
+    "Wino Willy's"
+  ],
+  "cityLimit-b": [
+    "#cornerEvent# #stVertNum# & River Road."
+  ],
+  "cityLimit-l": [
+    "#cornerEvent# Parkway Drive & #stHoriMid#."
+  ],
+  "cityLimit-r": [
+    "#cornerEvent# Clear Water Drive & #stHoriMid#."
+  ],
+  "cityLimit-t": [
+    "#cornerEvent# #stVertNum# & Palm."
+  ],
+  "cityLimit-tl": [
+    "#cornerEvent# Parkway Drive & Palm."
+  ],
+  "commBldg": [
+    "#commBldgEvent# #commBldgPlace# (contact #anyName# #phoneNumber#)"
+  ],
+  "commBldgEvent": [
+    "#artEvent#",
+    "#bloodDrive#",
+    "#fundraiser#"
+  ],
+  "commBldgPlace": [
+    "Lytton Galleria",
+    "Lytton Plaza",
+    "Lytton shopping mall"
+  ],
+  "construction": [
+    "#emojiConstruction# CONSTRUCTION\n\nCrews #constructionVerb# #constructionThing#, #stSpan#. #detour#"
+  ],
+  "constructionHighway": [
+    "#emojiConstruction# CONSTRUCTION\n\nCrews #constructionVerb# #constructionHighwayThing# on Highway 41. #detour#",
+    "#emojiConstruction# CONSTRUCTION\n\nCrews rewilding portions of Highway 41. #detour#"
+  ],
+  "constructionHighwayThing": [
+    "bike lane",
+    "drainage",
+    "light rail",
+    "pedestrian bridge",
+    "walkway"
+  ],
+  "constructionThing": [
+    "bus shelter",
+    "cycle tracks",
+    "protected intersections",
+    "rain garden",
+    "sidewalk",
+    "traffic-calming measures",
+    "water main"
+  ],
+  "constructionVerb": [
+    "enlarging",
+    "expanding",
+    "installing",
+    "repairing #infraDamage#",
+    "replacing #infraDamage#"
+  ],
+  "cornerEvent": [
+    "#bakeSale#",
+    "#garageSale#",
+    "#lemonade#",
+    "#poetryRecital#"
+  ],
+  "cottonCove": [
+    "#emojiPark# COTTON COVE\n\n#parkDay#"
+  ],
+  "court": [
+    "#emojiCourt# #courtHead#\n\n#courtLede# #courtWrap#"
+  ],
+  "courtCrime": [
+    "#crime#"
+  ],
+  "courtHead": [
+    "CHANCERY COURT",
+    "COMMUNITY COURT",
+    "HEARING"
+  ],
+  "courthouse": [
+    "#court#",
+    "#justMarried#\n#marriedWrapCourt#"
+  ],
+  "courtLede": [
+    "#official# #lastNames# presides in #courtCrime.lowercase# case against #fullName#.",
+    "#fullName# brings #courtCrime.lowercase# case against #fullName#.",
+    "Trial proceeding for #fullName#, accused of #courtCrime.lowercase#."
+  ],
+  "courtWitness": [
+    "#official.s#",
+    "#relation.s#"
+  ],
+  "courtWrap": [
+    "#socialWorker.s.capitalize# #courtWrapVerb#.",
+    "Court hears testimony from #courtWitness.lowercase#."
+  ],
+  "courtWrapVerb": [
+    "assembling",
+    "deliberating",
+    "in attendance",
+    "present"
+  ],
+  "crisis": [
+    "#carAccident#",
+    "#flooding#",
+    "#intervention#",
+    "#mh#",
+    "#obituary#",
+    "#rehab#",
+    "#unhoused#"
+  ],
+  "cycling": [
+    "#emojiCycling# #cyclingHead#\n\n#cyclingLede# #cyclingWrap#"
+  ],
+  "cyclingHead": [
+    "CYCLE-THON",
+    "TOUR DE LYTTON",
+    "TRAINING DAY"
+  ],
+  "cyclingLede": [
+    "Join the Lytton Cycling Club.",
+    "New lanes open.",
+    "Perfect weather for a bike ride."
+  ],
+  "cyclingWrap": [
+    "Bring a #menuItems# for the road.",
+    "Bring your friends.",
+    "Hot #menuItems# at the finish line.",
+    "Set a new PR."
+  ],
+  "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+  "detour": [
+    "Avoid.",
+    "Detour on #anyStreet#.",
+    "Local traffic only."
+  ],
+  "drinkAndDraw": [
+    "#emojiBaking# #drinkAndDrawHead#\n\n#drinkAndDrawLede#"
+  ],
+  "drinkAndDrawHead": [
+    "ART & ALCOHOL",
+    "BRICOLAGE & BOOZE",
+    "DRINK & DRAW"
+  ],
+  "drinkAndDrawLede": [
+    "Materials provided",
+    "Mentors present"
+  ],
+  "flooding": [
+    "#emojiFlood# #floodHead#\n\n#floodLede# #floodWrap#"
+  ],
+  "floodHead": [
+    "FLOOD",
+    "FLOODING",
+    "RAINFALL WARNING",
+    "TROPICAL STORM #firstNames.uppercase#"
+  ],
+  "floodLede": [
+    "Conditions to improve by #dayOfWeek#.",
+    "Storm surge likely.",
+    "Unseasonal conditions."
+  ],
+  "floodWrap": [
+    "Citizen rescue fleet mobilizing at #lyttonPlace#.",
+    "Community shelters at #lyttonPlace# & #lyttonPlace#.",
+    "Food & shelter at #lyttonPlace#.",
+    "Seek shelter immediately.",
+    "Stay indoors."
+  ],
+  "fundraiser": [
+    "#emojiFund# #fundraiserHead#\n\n#fundraiserLede# #fundraiserWrap#"
+  ],
+  "fundraiserHead": [
+    "FUNDRAISER",
+    "RAISING FUNDS"
+  ],
+  "fundraiserLede": [
+    "Donations go to #orgName#.",
+    "#orgName# raising money for #orgName#."
+  ],
+  "fundraiserWrap": [
+    "#dayOfWeek# to #dayOfWeek#.",
+    "PWYC."
+  ],
+  "garageSale": [
+    "#emojiGarageSale# GARAGE SALE\n\n#garageSaleLede# #gatheringWrap#"
+  ],
+  "garageSaleLede": [
+    "Contact #firstNames# (#phoneNumber#)",
+    "Early birds welcome.",
+    "Everything must go.",
+    "Proceeds go to #nouns.capitalizeAll# Club.",
+    "Various items."
+  ],
+  "gatheringWrap": [
+    "#bakeSaleWrap#",
+    "#carAccidentWrap#",
+    "#hotelGalaWrap#",
+    "#interventionWrap#",
+    "#parkDayWrap#",
+    "#streetSaleWrap#"
+  ],
+  "highway": [
+    "#highwayGeneral#"
+  ],
+  "highway-bl": [
+    "#highwayGeneral#",
+    "#justMarried#\n#marriedWrapHighway#"
+  ],
+  "highway-tr": [
+    "#highwayGeneral#",
+    "#justMarried#\n#marriedWrapHighway#"
+  ],
+  "highwayGeneral": [
+    "#constructionHighway#",
+    "#cycling#",
+    "#stSpanEvent# Highway 41.",
+    "#stSpanEvent# Highway 41.",
+    "#stSpanEvent# Highway 41.",
+    "#stSpanEvent# Highway 41."
+  ],
+  "hotel": [
+    "#hotelConf#",
+    "#hotelGala#",
+    "#justMarried#\n#marriedWrapHotel#"
+  ],
+  "hotelConf": [
+    "#emojiConf# #hotelConfHead#\n\n#hotelConfLede# #hotelConfWrap#"
+  ],
+  "hotelConfHead": [
+    "LECTURE SERIES",
+    "CONFERENCE"
+  ],
+  "hotelConfLede": [
+    "Attendees gather for the #orgName#."
+  ],
+  "hotelConfWrap": [
+    "Badges available in the lobby.",
+    "Discounted rooms available.",
+    "Schedule posted outdoors.",
+    "Sponsored tickets available."
+  ],
+  "hotelGala": [
+    "#emojiGala# #hotelGalaHead#\n\n#hotelGalaLede# #hotelConfWrap#"
+  ],
+  "hotelGalaHead": [
+    "DISCO SOIRÉE",
+    "GRADUATION",
+    "SOCK HOP"
+  ],
+  "hotelGalaLede": [
+    "A celebration of the season."
+  ],
+  "hotelGalaWrap": [
+    "Chaperones will be present.",
+    "#relation.s.capitalize# welcome.",
+    "Volunteers welcome."
+  ],
+  "infraDamage": [
+    "broken",
+    "crumbling",
+    "flooded"
+  ],
+  "intervention": [
+    "#emojiIntervention# #interventionHead#\n\n#interventionLede# #interventionWrap#"
+  ],
+  "interventionHead": [
+    "COMMUNITY INTERVENTION",
+    "CRISIS INTERVENTION"
+  ],
+  "interventionLede": [
+    "#socialWorker.s.capitalize# #interventionLedeStatus# #stIntersection#."
+  ],
+  "interventionLedeStatus": [
+    "arriving,",
+    "called to",
+    "on scene,"
+  ],
+  "interventionWrap": [
+    "#crime# #interventionWrapStatus#."
+  ],
+  "interventionWrapStatus": [
+    "averted",
+    "in progress",
+    "ongoing",
+    "suspected"
+  ],
+  "jail": [
+    "#rehab#"
+  ],
+  "justMarried": [
+    "💒 JUST MARRIED\n#marriedPeople#."
+  ],
+  "lemonade": [
+    "#emojiLemonade# #lemonadeHead#\n\n#lemonadeLede# #lemonadeWrap#"
+  ],
+  "lemonadeHead": [
+    "FRESH LEMONADE",
+    "LEMONADE",
+    "LEMONADE STAND"
+  ],
+  "lemonadeLede": [
+    "Courtesy of #firstNames# #lastNames#.",
+    "#firstNames# & #firstNames# #lastNames#."
+  ],
+  "lemonadeWrap": [
+    "Freshly squeezed.",
+    "Open for business.",
+    "PWYC.",
+    "Refreshing."
+  ],
+  "lyttonPark": [
+    "#emojiPark# LYTTON PARK\n#parkDay#"
+  ],
+  "lyttonPlace": [
+    "Bert's Park",
+    "The Blue Room",
+    "Caffeine Carol's",
+    "Cotton Cove",
+    "Lytton Community Courthouse",
+    "Hotel Delphoria",
+    "Hotel Delphoria Cocktail Lounge",
+    "Lytton Park",
+    "Wino Willy's"
+  ],
+  "marriedGuest": [
+    "Bride's maids",
+    "Groom's men",
+    "#official# #lastNames#",
+    "Wedding party"
+  ],
+  "marriedPeople": [
+    "#firstNames# #lastNames# & #firstNames# #lastNames#",
+    "#firstNames# & #firstNames# #lastNames#",
+    "#firstNames# #lastNames#, #firstNames# #lastNames#, & #firstNames# #lastNames#"
+  ],
+  "marriedWrapCourt": [
+    "#marriedGuest# all smiles on steps of the courthouse.",
+    "#official# #lastNames# presiding."
+  ],
+  "marriedWrapHighway": [
+    "Honeymoon Highway strewn with flowers.",
+    "Wedding party escorted along Honeymoon Highway.",
+    "Well-wishers invited to Honeymoon Highway."
+  ],
+  "marriedWrapHotel": [
+    "Guests stay at the Hotel Delphoria.",
+    "Reception at Hotel Delphoria Cocktail Lounge."
+  ],
+  "mh": [
+    "#emojiIntervention# #mhHead#\n\n#mhLede# #mhWrap#"
+  ],
+  "mhHead": [
+    "PSYCHIC #mhHeadType#",
+    "MENTAL HEALTH #mhHeadType#",
+    "PERSON IN DISTRESS",
+    "PERSONAL #mhHeadType#"
+  ],
+  "mhHeadType": [
+    "CRISIS",
+    "DISTURBANCE",
+    "ISSUE"
+  ],
+  "mhLede": [
+    "Individual in need of assistance, #stIntersection#.",
+    "Individual #mhLedeVerb# #relation.s#."
+  ],
+  "mhLedeVerb": [
+    "asking for",
+    "demanding",
+    "requesting time with"
+  ],
+  "mhWrap": [
+    "#socialWorker.s.capitalize# on-site.",
+    "#stIntersection# blocked for #socialWorker# intervention.",
+    "#stSpan.capitalize# blocked for #socialWorker# intervention."
+  ],
+  "obituary": [
+    "#emojiObituary# #obituaryHead#\n\n#obituaryLede# #obituaryWrap#"
+  ],
+  "obituaryHead": [
+    "IN MEMORIAM",
+    "LOVING MEMORY",
+    "OBITUARY"
+  ],
+  "obituaryLede": [
+    "#fullName# (#nonZeroDigit##nonZeroDigit# yrs)"
+  ],
+  "obituaryWrap": [
+    "Fondly remembered.",
+    "Love, always.",
+    "Respects from #orgName#.",
+    "Requiescat in pace.",
+    "RIP",
+    "Services this #dayOfWeek# at #lyttonPlace#.",
+    "Survived by loving #relation.s#."
+  ],
+  "official": [
+    "Alderman",
+    "Captain",
+    "Chancellor",
+    "Elder",
+    "Matron",
+    "Yeoman"
+  ],
+  "orgAdj": [
+    "",
+    "Gentleman's ",
+    "International ",
+    "Ladies' ",
+    "Royal ",
+    "Women's "
+  ],
+  "orgName": [
+    "#orgAdj##orgNoun##occupations.capitalizeAll.s#"
+  ],
+  "orgNoun": [
+    "Association for the ",
+    "Brotherhood of ",
+    "Gathering of ",
+    "Sisterhood of "
+  ],
+  "parkDay": [
+    "#parkDayLede# #parkDayWrap#"
+  ],
+  "parkDayLede": [
+    "A beautiful day for outdoor activities.",
+    "Sample some #menuItems.s#.",
+    "Take a rainy walk in the park.",
+    "Enjoy #orgName#'s Shakespeare in the Park."
+  ],
+  "parkDayWrap": [
+    "Bring a #clothes#.",
+    "Bring a #relation#.",
+    "Pack a #menuItems#.",
+    "Stay hydrated."
+  ],
+  "pedestrianStreet": [
+    "#emojiWalk# #pedestrianStreetHead#\n\n#pedestrianStreetLede# #pedestrianStreetWrap#"
+  ],
+  "pedestrianStreetFest": [
+    "#anyName#",
+    "#nouns#",
+    "#nouns.s#"
+  ],
+  "pedestrianStreetHead": [
+    "CAR-FREE",
+    "CLOSED TO MOTOR VEHICLES",
+    "PEDESTRIAN ZONE",
+    "PEDESTRIANS ONLY"
+  ],
+  "pedestrianStreetLede": [
+    "Closed to car traffic for #pedestrianStreetFest.capitalize#fest.",
+    "Pedestrians only.",
+    "Sponsored by #orgName#."
+  ],
+  "pedestrianStreetWrap": [
+    "Enjoy the fresh air.",
+    "Explore the city.",
+    "Fun for all.",
+    "Say hello to your neighbour."
+  ],
+  "poemName": [
+    "#poemNameTemplate.capitalize#",
+    "#poemNameTemplate.capitalizeAll#",
+    "#poemNameTemplate.lowercase#",
+    "#poemNameTemplate.uppercase#"
+  ],
+  "poemNameTemplate": [
+    "#firstNames#, #nouns# of #nouns#",
+    "#nouns.a# by #nouns.a#",
+    "my #emojiAll#, my #emojiAll#",
+    "#occupations.a# in #nouns#",
+    "ode on #nouns.a#",
+    "ode to #nouns.a#"
+  ],
+  "poetName": [
+    "#poetNameTemplate.capitalize#",
+    "#poetNameTemplate.capitalizeAll#",
+    "#poetNameTemplate.lowercase#",
+    "#poetNameTemplate.uppercase#",
+    "#poetNameTemplate#"
+  ],
+  "poetNameTemplate": [
+    "#firstNames#",
+    "#lastNames#",
+    "#firstNames# #lastNames#",
+    "#firstNames# #firstNames# #lastNames#"
+  ],
+  "poetryHead": [
+    "ORATION",
+    "POETRY",
+    "RECITAL"
+  ],
+  "poetryLede": [
+    "Hear #poetName# recite their latest: #poemName#."
+  ],
+  "poetryRecital": [
+    "#emojiPoetry# #poetryHead#\n\n#poetryLede# #gatheringWrap#"
+  ],
+  "police": [
+    "#emojiObituary# #policeHead#\n\n#policeLede# #policeWrap#"
+  ],
+  "policeHead": [
+    "IN MEMORIAM",
+    "VIGIL",
+    "WE REMEMBER"
+  ],
+  "policeLede": [
+    "#policeLedeThing# at the Memorial to the Victims of Police Violence."
+  ],
+  "policeLedeRitual": [
+    "contemplation",
+    "prayer",
+    "song"
+  ],
+  "policeLedeThing": [
+    "A moment of silence",
+    "Crowds gather",
+    "#official# #lastNames# leads the community in #policeLedeRitual#,",
+    "Wreaths laid"
+  ],
+  "policeVerb": [
+    "present",
+    "providing support"
+  ],
+  "policeWrap": [
+    "#fullName# to speak.",
+    "#official# #lastNames# to speak.",
+    "#socialWorker.s.capitalize# #policeVerb#."
+  ],
+  "rehab": [
+    "#emojiRehab# #rehabHead#\n\n#rehabLede# #rehabWrap#"
+  ],
+  "rehabDetails": [
+    " after a lengthy rehabilitation",
+    ", who never gave up hope",
+    ", whose recovery was painstaking"
+  ],
+  "rehabHead": [
+    "NEXT STEPS",
+    "WELCOME BACK",
+    "WELCOME HOME",
+    "WITH OPEN ARMS"
+  ],
+  "rehabLede": [
+    "#fullName# leaves Lytton Rehab Center on outpatient basis.",
+    "The community welcomes #fullName##rehabDetails#."
+  ],
+  "rehabWrap": [
+    "'I couldn't have done it without my #relation.s#.'",
+    "'I missed my #relation#'s #menuItems.lowercase#!'",
+    "Your #relation# missed you.",
+    "Your #relation.s# missed you."
+  ],
+  "relation": [
+    "family",
+    "father",
+    "friend",
+    "husband",
+    "children",
+    "mother",
+    "nibling",
+    "parent",
+    "partner",
+    "wife"
+  ],
+  "socialWorker": [
+    "adjudicator",
+    "counsellor",
+    "crisis team",
+    "facilitator",
+    "mediator",
+    "moderator",
+    "peer",
+    "prevention team",
+    "social worker",
+    "therapist"
+  ],
+  "standardGrid": [
+    "#construction#",
+    "#cornerEvent# #stIntersection#.",
+    "#cornerEvent# #stIntersection#.",
+    "#cornerEvent# #stIntersection#.",
+    "#stSpanEvent# #stSpan.capitalize#.",
+    "#stSpanEvent# #stSpan.capitalize#.",
+    "#stSpanEvent# #stSpan.capitalize#.",
+    "#weatherReport#",
+    "#weatherReport#"
+  ],
+  "stHoriMid": [
+    "Oak",
+    "Fig",
+    "Peach",
+    "Rose",
+    "Lily",
+    "Poppy"
+  ],
+  "stIntersection": [
+    "#stVertNum# & #stHoriMid#"
+  ],
+  "streetHorizontal": [
+    "Palm",
+    "#stHoriMid#",
+    "River Road"
+  ],
+  "streetSale": [
+    "#emojiStreetSale# #streetSaleHead#\n\n#streetSaleLede# #streetSaleWrap#"
+  ],
+  "streetSaleHead": [
+    "NEIGHBOURHOOD SALE",
+    "STREET SALE"
+  ],
+  "streetSaleItem": [
+    "#clothes#",
+    "#nouns#"
+  ],
+  "streetSaleLede": [
+    "Great deals on #streetSaleItem.s#.",
+    "#occupations.s.capitalize# welcome."
+  ],
+  "streetSaleWrap": [
+    "Bring your own #containers.s#.",
+    "Hidden treasures.",
+    "Something for everyone."
+  ],
+  "streetVertical": [
+    "Parkway Drive",
+    "#stVertNum#",
+    "Clear Water Drive"
+  ],
+  "stSpan": [
+    "length of #anyMiddleStreet#",
+    "on #anyMiddleStreet#",
+    "#stIntersection#",
+    "#stVertNum# between #stHoriMid# & #stHoriMid#",
+    "#stVertNum# from #stHoriMid# to #stHoriMid#",
+    "#stHoriMid# between #stVertNum# & #stVertNum#",
+    "#stHoriMid# from #stVertNum# to #stVertNum#"
+  ],
+  "stSpanEvent": [
+    "#pedestrianStreet#",
+    "#cycling#",
+    "#streetSale#"
+  ],
+  "stVertNum": [
+    "First",
+    "Second",
+    "Third",
+    "Fourth",
+    "Fifth",
+    "Sixth",
+    "Seventh",
+    "Eighth",
+    "Ninth",
+    "Tenth"
+  ],
+  "tastingNight": [
+    "#tastingNightEmoji# #tastingNightHead#\n\n#tastingNightLede#"
+  ],
+  "tastingNightEmoji": [
+    "#emojiAlcohol#",
+    "#emojiBaking#",
+    "#emojiLemonade#"
+  ],
+  "tastingNightHead": [
+    "DELICIOUS",
+    "FEAST FOR THE SENSES",
+    "FLIGHTS AVAILABLE",
+    "TASTE SENSATION"
+  ],
+  "tastingNightLede": [
+    "Tasting platter of #menuItems.capitalize#, #menuItems#, & #menuItems#.",
+    "Tonight's sampling menu: #menuItems#.",
+    "Try a full spread of #menuItems#."
+  ],
+  "unhoused": [
+    "#emojiUnhoused# #unhousedHead#\n\n#unhousedLede# #unhousedWrap#"
+  ],
+  "unhousedHead": [
+    "UNHOUSED",
+    "ENCAMPMENT"
+  ],
+  "unhousedLede": [
+    "Community outreach mobilized.",
+    "#nonZeroDigit##nonZeroDigit# comrades in need.",
+    "Requesting donations of #clothes.s#.",
+    "The season of giving."
+  ],
+  "unhousedWrap": [
+    "Hot #menuItems# served at #lyttonPlace#.",
+    "#socialWorker.s.capitalize# providing support.",
+    "Contact #firstNames# (#phoneNumber#)"
+  ],
+  "weatherReport": [
+    "#emojiWeather# #weatherReportHead#\n\n#weatherReportLede# #weatherReportWrap#"
+  ],
+  "weatherReportHead": [
+    "FORECAST",
+    "WEATHER",
+    "WEEKEND OUTLOOK"
+  ],
+  "weatherReportJoin": [
+    " becoming ",
+    ", later ",
+    ", turning into ",
+    " with a chance of "
+  ],
+  "weatherReportLede": [
+    "#conditions.lowercase.capitalize##weatherReportJoin##conditions.lowercase#.",
+    "#conditions.lowercase.capitalize# likely.",
+    "Unseasonal #conditions.lowercase#."
+  ],
+  "weatherReportWrap": [
+    "Dress accordingly.",
+    "Don't forget your #clothes.s#.",
+    "POP: #percentage#%",
+    "Winds up to #percentage# mph."
+  ]
+}
