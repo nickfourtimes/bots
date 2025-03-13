@@ -18,6 +18,7 @@ BSKY_BASE_URL = os.getenv("BSKY_BASE_URL")
 MASTO_ACCESS_TOKEN = os.getenv("LYTTON_MASTO_ACCESS_TOKEN")
 MASTO_BASE_URL = os.getenv("MASTO_BASE_URL")
 
+# todo: get config vars
 
 # poast!
 post = "foo"

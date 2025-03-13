@@ -1,0 +1,5 @@
+{
+	"CITY_LIMIT_PROB": 0.25,
+	"HIGHWAY_PROB": 0.3,
+	"SPECIAL_PROB": 0.15
+}
