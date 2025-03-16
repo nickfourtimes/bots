@@ -1,4 +1,7 @@
 import os
+import json
+import math
+import random
 import requests
 import sys
 
@@ -6,7 +9,7 @@ from atproto import Client
 from dotenv import load_dotenv
 from mastodon import Mastodon
 
-# get vars
+# get env vars
 load_dotenv()
 
 # Bluesky credentials
@@ -18,61 +21,64 @@ BSKY_BASE_URL = os.getenv("BSKY_BASE_URL")
 MASTO_ACCESS_TOKEN = os.getenv("LYTTON_MASTO_ACCESS_TOKEN")
 MASTO_BASE_URL = os.getenv("MASTO_BASE_URL")
 
-# todo: get config vars
+# get config vars
+with open("./lytton/config.json") as jfile:
+    CITY_LIMIT_PROB = jfile["CITY_LIMIT_PROB"]
+    HIGHWAY_PROB = jfile["HIGHWAY_PROB"]
+    SPECIAL_PROB = jfile["SPECIAL_PROB"]
 
-# /** randomly select how the city is going to be built */
-# function chooseCityParams() {
-#   var args = {};
 
-#   // highways are just built different
-#   if (Math.random() < HIGHWAY_PROB) {
-#     // 25% chance, each, of top-right or bottom-left; 50% chance of straight through
-#     var opt = ["tr", "bl", "nil", "nil"];
-#     args.highway = opt[Math.floor(Math.random() * opt.length)];
-#   } else {
-#     // not a highway...
+# randomly select how the city is going to be built
+def chooseCityParams():
+    args = {}
 
-#     // ...but we could be on the outskirts of town
-#     if (Math.random() < CITY_LIMIT_PROB) {
-#       // randomly choose a city limit
-#       var opt = ["tl", "t", "l", "r", "b"];
-#       var choice = opt[Math.floor(Math.random() * opt.length)];
-#       args.cityLimit = choice;
-#     }
+    # highways are just built different
+    if random.random() < HIGHWAY_PROB:
+        # 25% chance, each, of top-right or bottom-left 50% chance of straight through
+        opt = ["tr", "bl", "nil", "nil"]
+        args.highway = opt[math.floor(random.random() * opt.length)]
 
-#     // maybe there are special buildings!
-#     if (Math.random() < SPECIAL_PROB) {
-#       // we're doing a special block or two!
-#       var specialR = ["bertsPark", "jail"];
-#       var specialL = [
-#         "blueRoom",
-#         "caffeineWino",
-#         "commBldg",
-#         "cottonCove",
-#         "courthouse",
-#         "hotel",
-#         "lyttonPark",
-#         "police",
-#       ];
+    else:  # not a highway...
 
-#       // we'll either have a special left, or right, or both
-#       var allSpecial = [];
-#       var rnd = Math.random();
-#       if (rnd > 0.667) {
-#         allSpecial.push(specialL[Math.floor(Math.random() * specialL.length)]);
-#       } else if (rnd > 0.333) {
-#         allSpecial.push(specialR[Math.floor(Math.random() * specialR.length)]);
-#       } else {
-#         allSpecial.push(specialR[Math.floor(Math.random() * specialR.length)]);
-#         allSpecial.push(specialL[Math.floor(Math.random() * specialL.length)]);
-#       }
+        # ...but we could be on the outskirts of town
+        if random.random() < CITY_LIMIT_PROB:
+            # randomly choose a city limit
+            opt = ["tl", "t", "l", "r", "b"]
+            choice = opt[math.floor(random.random() * opt.length)]
+            args.cityLimit = choice
 
-#       args.special = allSpecial;
-#     } // special buildings
-#   } // no highways
+        # maybe there are special buildings!
+        if random.random() < SPECIAL_PROB:
+            # we're doing a special block or two!
+            specialR = ["bertsPark", "jail"]
+            specialL = [
+                "blueRoom",
+                "caffeineWino",
+                "commBldg",
+                "cottonCove",
+                "courthouse",
+                "hotel",
+                "lyttonPark",
+                "police",
+            ]
 
-#   return args;
-# }
+            # we'll either have a special left, or right, or both
+            allSpecial = []
+            rnd = random.random()
+            if rnd > 0.667:
+                allSpecial.push(specialL[math.floor(random.random() * specialL.length)])
+            elif rnd > 0.333:
+                allSpecial.push(specialR[math.floor(random.random() * specialR.length)])
+            else:
+                allSpecial.push(specialR[math.floor(random.random() * specialR.length)])
+                allSpecial.push(specialL[math.floor(random.random() * specialL.length)])
+
+            args.special = allSpecial
+
+    return args
+
+
+params = chooseCityParams()
 
 # poast!
 post = "foo"
