@@ -4,5 +4,8 @@ node_modules
 # IDE junk
 .idea
 
+# Python junk
+__pycache__
+
 # really don't
 .env

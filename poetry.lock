@@ -853,6 +853,17 @@ files = [
 ]
 
 [[package]]
+name = "tracery"
+version = "0.1.1"
+description = "Python port of Kate Compton's tracery text generation library"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "tracery-0.1.1.tar.gz", hash = "sha256:3fefb23a0b12c6568fdc32bcab2ec6f4395c81ea8568c019fc9905d1eb9dd232"},
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.12.2"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -981,4 +992,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.14"
-content-hash = "7c6db693dc1188f47cf30242bd26bbbd16f1da8ccb7b3bba4d64497620d6baee"
+content-hash = "41a625aa20601cd662950a62cfb8c8b95163cdc90bd8d37ed9b0dc0d361931e4"
