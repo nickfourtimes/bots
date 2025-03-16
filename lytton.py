@@ -2,8 +2,6 @@ import os
 import json
 import math
 import random
-import requests
-import sys
 
 from atproto import Client
 from dotenv import load_dotenv
