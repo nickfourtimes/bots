@@ -25,9 +25,10 @@ MASTO_BASE_URL = os.getenv("MASTO_BASE_URL")
 
 # get config vars
 with open("./lytton/config.json") as jfile:
-    CITY_LIMIT_PROB = jfile["CITY_LIMIT_PROB"]
-    HIGHWAY_PROB = jfile["HIGHWAY_PROB"]
-    SPECIAL_PROB = jfile["SPECIAL_PROB"]
+    data = json.load(jfile)
+    CITY_LIMIT_PROB = data["CITY_LIMIT_PROB"]
+    HIGHWAY_PROB = data["HIGHWAY_PROB"]
+    SPECIAL_PROB = data["SPECIAL_PROB"]
 
 
 # randomly select how the city is going to be built
@@ -38,7 +39,7 @@ def chooseCityParams():
     if random.random() < HIGHWAY_PROB:
         # 25% chance, each, of top-right or bottom-left 50% chance of straight through
         opt = ["tr", "bl", "nil", "nil"]
-        args.highway = opt[math.floor(random.random() * opt.length)]
+        args["highway"] = opt[math.floor(random.random() * len(opt))]
 
     else:  # not a highway...
 
@@ -46,8 +47,8 @@ def chooseCityParams():
         if random.random() < CITY_LIMIT_PROB:
             # randomly choose a city limit
             opt = ["tl", "t", "l", "r", "b"]
-            choice = opt[math.floor(random.random() * opt.length)]
-            args.cityLimit = choice
+            choice = opt[math.floor(random.random() * len(opt))]
+            args["cityLimit"] = choice
 
         # maybe there are special buildings!
         if random.random() < SPECIAL_PROB:
@@ -65,17 +66,17 @@ def chooseCityParams():
             ]
 
             # we'll either have a special left, or right, or both
-            allSpecial = []
+            all_special = []
             rnd = random.random()
             if rnd > 0.667:
-                allSpecial.push(specialL[math.floor(random.random() * specialL.length)])
+                all_special.append(specialL[math.floor(random.random() * specialL.length)])
             elif rnd > 0.333:
-                allSpecial.push(specialR[math.floor(random.random() * specialR.length)])
+                all_special.append(specialR[math.floor(random.random() * specialR.length)])
             else:
-                allSpecial.push(specialR[math.floor(random.random() * specialR.length)])
-                allSpecial.push(specialL[math.floor(random.random() * specialL.length)])
+                all_special.append(specialR[math.floor(random.random() * specialR.length)])
+                all_special.append(specialL[math.floor(random.random() * specialL.length)])
 
-            args.special = allSpecial
+            args["special"] = all_special
 
     return args
 
@@ -85,7 +86,7 @@ params = chooseCityParams()
 # poast!
 post = "foo"
 
-print(get_text())
+print(get_text(params))
 
 # try:
 #     bsky = Client(BSKY_BASE_URL)

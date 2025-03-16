@@ -1,12 +1,13 @@
 import json
+import os
 import random
 import tracery
+from tracery.modifiers import base_english
 
 # get config vars
 with open("lytton/config.json") as jfile:
-    j = json.loads(jfile)
-    print(j)
-    CRISIS_PROB = j["CRISIS_PROB"]
+    data = json.load(jfile)
+    CRISIS_PROB = data["CRISIS_PROB"]
 
 
 def lowercase(text):
@@ -20,29 +21,29 @@ def uppercase(text):
 def get_text(cityParams):
     # any and all JSON files we're using
     sourceFiles = [
-        "./words/tracery-data.json",
-        "./words/clothes.json",
-        "./words/containers.json",
-        "./words/crimes.json",
-        "./words/emoji.json",
-        "./words/food.json",
-        "./words/names.json",
-        "./words/nouns.json",
-        "./words/numbers.json",
-        "./words/occupations.json",
-        "./words/weather.json",
+        "./lytton/words/tracery-data.json",
+        "./lytton/words/clothes.json",
+        "./lytton/words/containers.json",
+        "./lytton/words/crimes.json",
+        "./lytton/words/emoji.json",
+        "./lytton/words/food.json",
+        "./lytton/words/names.json",
+        "./lytton/words/nouns.json",
+        "./lytton/words/numbers.json",
+        "./lytton/words/occupations.json",
+        "./lytton/words/weather.json",
     ]
 
     # import all the source files
-    allJson = []
+    all_json = {}
     for f in sourceFiles:
-        with open(f) as json_file:
-            allJson.append(json.load(json_file))
+        with open(f, encoding="utf-8") as json_file:
+            all_json = {**all_json, **json.load(json_file)}
 
     # import our grammar and add some (base & custom) modifiers
-    grammar = tracery.createGrammar(allJson)
-    grammar.addModifiers(tracery.baseEngModifiers)
-    grammar.addModifiers({"lowercase": lowercase, "uppercase": uppercase})
+    grammar = tracery.Grammar(all_json)
+    grammar.add_modifiers(base_english)
+    grammar.add_modifiers({"lowercase": lowercase, "uppercase": uppercase})
 
     starter = ""
 
