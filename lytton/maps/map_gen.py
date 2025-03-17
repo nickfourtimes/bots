@@ -25,74 +25,63 @@ def rand_comp(maxNum):
     return math.floor(math.random() * maxNum) + 1
 
 
-'''
-Return a list of .png paths, in the order in which they must be drawn
-'''
 async def create_city_image_list(args):
+    """
+    Return a list of PNG path names in the order in which they should be drawn.
+    """
+
     list = []
 
     # the street background
-    list.push(await load_image(f"{IMG_PATH}Main-Street-Pattern.png"))
+    list.push(f"{IMG_PATH}Main-Street-Pattern.png")
 
     # draw a basic, random city
     # the other components, if selected, can just draw right on top of these
-    list.push(await load_image(f"{IMG_PATH}TLL-0{rand_comp(4)}.png"))
-    list.push(await load_image(f"{IMG_PATH}TL-0{rand_comp(6)}.png"))
-    list.push(await load_image(f"{IMG_PATH}TR-0{rand_comp(7)}.png"))
-    list.push(await load_image(f"{IMG_PATH}TRR-0{rand_comp(5)}.png"))
-    list.push(await load_image(f"{IMG_PATH}LL-0{rand_comp(6)}.png"))
-    list.push(await load_image(f"{IMG_PATH}L-0{rand_comp(6)}.png"))
-    list.push(await load_image(f"{IMG_PATH}R-0{rand_comp(6)}.png"))
-    list.push(await load_image(f"{IMG_PATH}RR-0{rand_comp(7)}.png"))
-    list.push(await load_image(f"{IMG_PATH}BLL-0{rand_comp(6)}.png"))
-    list.push(await load_image(f"{IMG_PATH}BL-0{rand_comp(7)}.png"))
-    list.push(await load_image(f"{IMG_PATH}BR-0{rand_comp(8)}.png"))
-    list.push(await load_image(f"{IMG_PATH}BRR-0{rand_comp(7)}.png"))
+    list.push(f"{IMG_PATH}TLL-0{rand_comp(4)}.png")
+    list.push(f"{IMG_PATH}TL-0{rand_comp(6)}.png")
+    list.push(f"{IMG_PATH}TR-0{rand_comp(7)}.png")
+    list.push(f"{IMG_PATH}TRR-0{rand_comp(5)}.png")
+    list.push(f"{IMG_PATH}LL-0{rand_comp(6)}.png")
+    list.push(f"{IMG_PATH}L-0{rand_comp(6)}.png")
+    list.push(f"{IMG_PATH}R-0{rand_comp(6)}.png")
+    list.push(f"{IMG_PATH}RR-0{rand_comp(7)}.png")
+    list.push(f"{IMG_PATH}BLL-0{rand_comp(6)}.png")
+    list.push(f"{IMG_PATH}BL-0{rand_comp(7)}.png")
+    list.push(f"{IMG_PATH}BR-0{rand_comp(8)}.png")
+    list.push(f"{IMG_PATH}BRR-0{rand_comp(7)}.png")
 
     # if there's a highway, it supercedes any other drawing
     if "highway" in args:
-        list.push(await load_image(f"{IMG_PATH}Highway-Base.png"))
+        list.push(f"{IMG_PATH}Highway-Base.png")
 
         # the little bits & bobs surrounding the highways
         for i in (0.0).NUM_HIGHWAY_COMPS:
-            list.push(await load_image(f"{IMG_PATH}Highway-01-0{rand_comp(3)}.png"))
-            list.push(await load_image(f"{IMG_PATH}Highway-02-0{rand_comp(3)}.png"))
-            list.push(await load_image(f"{IMG_PATH}Highway-03-0{rand_comp(4)}.png"))
-            list.push(await load_image(f"{IMG_PATH}Highway-04-0{rand_comp(4)}.png"))
-            list.push(await load_image(f"{IMG_PATH}Highway-05-0{rand_comp(3)}.png"))
-            list.push(await load_image(f"{IMG_PATH}Highway-06-0{rand_comp(4)}.png"))
-            list.push(await load_image(f"{IMG_PATH}Highway-07-0{rand_comp(3)}.png"))
-            list.push(await load_image(f"{IMG_PATH}Highway-08-0{rand_comp(3)}.png"))
+            list.push(f"{IMG_PATH}Highway-01-0{rand_comp(3)}.png")
+            list.push(f"{IMG_PATH}Highway-02-0{rand_comp(3)}.png")
+            list.push(f"{IMG_PATH}Highway-03-0{rand_comp(4)}.png")
+            list.push(f"{IMG_PATH}Highway-04-0{rand_comp(4)}.png")
+            list.push(f"{IMG_PATH}Highway-05-0{rand_comp(3)}.png")
+            list.push(f"{IMG_PATH}Highway-06-0{rand_comp(4)}.png")
+            list.push(f"{IMG_PATH}Highway-07-0{rand_comp(3)}.png")
+            list.push(f"{IMG_PATH}Highway-08-0{rand_comp(3)}.png")
 
         # ...and then, we might have one of the highways that leads out of the city
         if "tr" in args.highway:
-            list.push(await load_image(f"{IMG_PATH}Highway-TR.png"))
+            list.push(f"{IMG_PATH}Highway-TR.png")
         elif "bl" in args.highway:
-            list.push(await load_image(f"{IMG_PATH}Highway-BL.png"))
+            list.push(f"{IMG_PATH}Highway-BL.png")
     else:
         if "cityLimit" in args:
             if "tl" in args.cityLimit:
-                list.push(await load_image(f"{IMG_PATH}Special-TL-CityLimit-01.png"))
+                list.push(f"{IMG_PATH}Special-TL-CityLimit-01.png")
             elif "t" in args.cityLimit:
-                list.push(
-                    await load_image(
-                        f"{IMG_PATH}Special-T-CityLimit-0{rand_comp(2)}.png"
-                    )
-                )
+                list.push(f"{IMG_PATH}Special-T-CityLimit-0{rand_comp(2)}.png")
             elif "l" in args.cityLimit:
-                list.push(await load_image(f"{IMG_PATH}Special-L-CityLimit-01.png"))
+                list.push(f"{IMG_PATH}Special-L-CityLimit-01.png")
             elif "r" in args.cityLimit:
-                list.push(
-                    await load_image(
-                        f"{IMG_PATH}Special-R-CityLimit-0{rand_comp(2)}.png"
-                    )
-                )
+                list.push(f"{IMG_PATH}Special-R-CityLimit-0{rand_comp(2)}.png")
             elif "b" in args.cityLimit:
-                list.push(
-                    await load_image(
-                        f"{IMG_PATH}Special-B-CityLimit-0{rand_comp(2)}.png"
-                    )
-                )
+                list.push(f"{IMG_PATH}Special-B-CityLimit-0{rand_comp(2)}.png")
         else:
             # some of the specials prevent us from drawing longer blocks on the sides
             canDoLongBlockL = True
@@ -102,38 +91,36 @@ async def create_city_image_list(args):
                 # these two should be mutually exclusive
                 if "cottonCove" in args.special:
                     canDoLongBlockR = False
-                    list.push(await load_image(f"{IMG_PATH}Special-BR-CottonCove.png"))
+                    list.push(f"{IMG_PATH}Special-BR-CottonCove.png")
                 elif "lyttonPark" in args.special:
                     canDoLongBlockL = False
-                    list.push(await load_image(f"{IMG_PATH}Special-L-LyttonPark.png"))
+                    list.push(f"{IMG_PATH}Special-L-LyttonPark.png")
 
                 # specials on the right can overlap, tho you'll only see one
                 if "bertsPark" in args.special:
-                    list.push(await load_image(f"{IMG_PATH}Special-R-BertsPark.png"))
+                    list.push(f"{IMG_PATH}Special-R-BertsPark.png")
                 if "jail" in args.special:
-                    list.push(await load_image(f"{IMG_PATH}Special-R-Jail.png"))
+                    list.push(f"{IMG_PATH}Special-R-Jail.png")
 
                 # ...and likewise for specials on the left
                 if "blueRoom" in args.special:
-                    list.push(await load_image(f"{IMG_PATH}Special-L-BlueRoom.png"))
+                    list.push(f"{IMG_PATH}Special-L-BlueRoom.png")
                 if "caffeineWino" in args.special:
-                    list.push(await load_image(f"{IMG_PATH}Special-L-CaffeineWino.png"))
+                    list.push(f"{IMG_PATH}Special-L-CaffeineWino.png")
                 if "commBldg" in args.special:
-                    list.push(await load_image(f"{IMG_PATH}Special-L-CommBldg.png"))
+                    list.push(f"{IMG_PATH}Special-L-CommBldg.png")
                 if "courthouse" in args.special:
-                    list.push(await load_image(f"{IMG_PATH}Special-L-Courthouse.png"))
+                    list.push(f"{IMG_PATH}Special-L-Courthouse.png")
                 if "hotel" in args.special:
-                    list.push(
-                        await load_image(f"{IMG_PATH}Special-L-HotelDelphoria.png")
-                    )
+                    list.push(f"{IMG_PATH}Special-L-HotelDelphoria.png")
                 if "police" in args.special:
-                    list.push(await load_image(f"{IMG_PATH}Special-L-PoliceHQ.png"))
+                    list.push(f"{IMG_PATH}Special-L-PoliceHQ.png")
 
             # random chance of drawing one of the long-blocks on the sides
             if canDoLongBlockL and math.random() < LONG_BLOCK_CHANCE:
-                list.push(await load_image(f"{IMG_PATH}LL-Block-0{rand_comp(3)}.png"))
+                list.push(f"{IMG_PATH}LL-Block-0{rand_comp(3)}.png")
             if canDoLongBlockR and math.random() < LONG_BLOCK_CHANCE:
-                list.push(await load_image(f"{IMG_PATH}RR-Block-0{rand_comp(2)}.png"))
+                list.push(f"{IMG_PATH}RR-Block-0{rand_comp(2)}.png")
 
     return list
 
