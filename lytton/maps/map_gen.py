@@ -1,4 +1,5 @@
 import math
+import random
 
 #   Canvas = require("canvas"),
 #   loadImage = Canvas.loadImage,
@@ -22,10 +23,10 @@ def load_image(path):
 
 
 def rand_comp(maxNum):
-    return math.floor(math.random() * maxNum) + 1
+    return math.floor(random.random() * maxNum) + 1
 
 
-async def create_city_image_list(args):
+def create_city_image_list(args):
     """
     Return a list of PNG path names in the order in which they should be drawn.
     """
@@ -117,13 +118,18 @@ async def create_city_image_list(args):
                     list.append(f"{IMG_PATH}Special-L-PoliceHQ.png")
 
             # random chance of drawing one of the long-blocks on the sides
-            if canDoLongBlockL and math.random() < LONG_BLOCK_CHANCE:
+            if canDoLongBlockL and random.random() < LONG_BLOCK_CHANCE:
                 list.append(f"{IMG_PATH}LL-Block-0{rand_comp(3)}.png")
-            if canDoLongBlockR and math.random() < LONG_BLOCK_CHANCE:
+            if canDoLongBlockR and random.random() < LONG_BLOCK_CHANCE:
                 list.append(f"{IMG_PATH}RR-Block-0{rand_comp(2)}.png")
 
     return list
 
+
+def get_image(city_params):
+    img_list = create_city_image_list(city_params)
+    for img_path in img_list:
+        print(f"{img_path}")
 
 # module.exports = async function (cityParams, res, cb) {
 #   canvas = Canvas.createCanvas(MAP_WIDTH, MAP_HEIGHT),

@@ -7,6 +7,7 @@ from atproto import Client
 from dotenv import load_dotenv
 from mastodon import Mastodon
 
+from lytton.maps.map_gen import get_image
 from lytton.words.lytton_tracery import get_text
 
 # get env vars
@@ -67,12 +68,12 @@ def chooseCityParams():
             all_special = []
             rnd = random.random()
             if rnd > 0.667:
-                all_special.append(specialL[math.floor(random.random() * specialL.length)])
+                all_special.append(specialL[math.floor(random.random() * len(specialL))])
             elif rnd > 0.333:
-                all_special.append(specialR[math.floor(random.random() * specialR.length)])
+                all_special.append(specialR[math.floor(random.random() * len(specialR))])
             else:
-                all_special.append(specialR[math.floor(random.random() * specialR.length)])
-                all_special.append(specialL[math.floor(random.random() * specialL.length)])
+                all_special.append(specialR[math.floor(random.random() * len(specialR))])
+                all_special.append(specialL[math.floor(random.random() * len(specialL))])
 
             args["special"] = all_special
 
@@ -84,7 +85,8 @@ params = chooseCityParams()
 # poast!
 post = "foo"
 
-print(get_text(params))
+# print(get_text(params))
+get_image(params)
 
 # try:
 #     bsky = Client(BSKY_BASE_URL)
