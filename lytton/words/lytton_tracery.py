@@ -1,5 +1,4 @@
 import json
-import math
 import random
 import tracery
 from tracery.modifiers import base_english
@@ -18,7 +17,7 @@ def uppercase(text):
     return text.toUpperCase()
 
 
-def get_text(cityParams):
+def get_text(city_params):
     # any and all JSON files we're using
     sourceFiles = [
         "./lytton/words/tracery-data.json",
@@ -50,31 +49,31 @@ def get_text(cityParams):
     if random.random() < CRISIS_PROB:
         starter = "#crisis#"
 
-    elif "highway" in cityParams:
+    elif "highway" in city_params:
         # check if the highway leads out of the city
-        if "tr" in cityParams["highway"]:
+        if "tr" in city_params["highway"]:
             starter = "#highway-tr#"
-        elif "bl" in cityParams["highway"]:
+        elif "bl" in city_params["highway"]:
             starter = "#highway-bl#"
         else:
             starter = "#highway#"
 
     else:
-        if "cityLimit" in cityParams:
-            if "tl" in cityParams["cityLimit"]:  # parkway drive & palm
+        if "cityLimit" in city_params:
+            if "tl" in city_params["cityLimit"]:  # parkway drive & palm
                 starter = "#cityLimit-tl#"
-            elif "t" in cityParams["cityLimit"]:  # Xth & palm
+            elif "t" in city_params["cityLimit"]:  # Xth & palm
                 starter = "#cityLimit-t#"
-            elif "l" in cityParams["cityLimit"]:  # parkway drive & FLOWER
+            elif "l" in city_params["cityLimit"]:  # parkway drive & FLOWER
                 starter = "#cityLimit-l#"
-            elif "r" in cityParams["cityLimit"]:  # clear water drive & FLOWER
+            elif "r" in city_params["cityLimit"]:  # clear water drive & FLOWER
                 starter = "#cityLimit-r#"
-            elif "b" in cityParams["cityLimit"]:  # Xth & river road
+            elif "b" in city_params["cityLimit"]:  # Xth & river road
                 starter = "#cityLimit-b#"
         else:
             # we may have more than one special (L or R or both), so comment on a random one
-            if "special" in cityParams:
-                starter = f"#{random.choice(cityParams["special"])}#"
+            if "special" in city_params:
+                starter = f"#{random.choice(city_params["special"])}#"
             else:
                 # if we get here, it's a very standard city block
                 starter = "#standardGrid#"
