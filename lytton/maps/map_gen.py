@@ -66,21 +66,21 @@ async def create_city_image_list(args):
             list.append(f"{IMG_PATH}Highway-08-0{rand_comp(3)}.png")
 
         # ...and then, we might have one of the highways that leads out of the city
-        if "tr" in args.highway:
+        if "tr" in args["highway"]:
             list.append(f"{IMG_PATH}Highway-TR.png")
-        elif "bl" in args.highway:
+        elif "bl" in args["highway"]:
             list.append(f"{IMG_PATH}Highway-BL.png")
     else:
         if "cityLimit" in args:
-            if "tl" in args.cityLimit:
+            if "tl" in args["cityLimit"]:
                 list.append(f"{IMG_PATH}Special-TL-CityLimit-01.png")
-            elif "t" in args.cityLimit:
+            elif "t" in args["cityLimit"]:
                 list.append(f"{IMG_PATH}Special-T-CityLimit-0{rand_comp(2)}.png")
-            elif "l" in args.cityLimit:
+            elif "l" in args["cityLimit"]:
                 list.append(f"{IMG_PATH}Special-L-CityLimit-01.png")
-            elif "r" in args.cityLimit:
+            elif "r" in args["cityLimit"]:
                 list.append(f"{IMG_PATH}Special-R-CityLimit-0{rand_comp(2)}.png")
-            elif "b" in args.cityLimit:
+            elif "b" in args["cityLimit"]:
                 list.append(f"{IMG_PATH}Special-B-CityLimit-0{rand_comp(2)}.png")
         else:
             # some of the specials prevent us from drawing longer blocks on the sides
@@ -89,31 +89,31 @@ async def create_city_image_list(args):
 
             if "special" in args:
                 # these two should be mutually exclusive
-                if "cottonCove" in args.special:
+                if "cottonCove" in args["special"]:
                     canDoLongBlockR = False
                     list.append(f"{IMG_PATH}Special-BR-CottonCove.png")
-                elif "lyttonPark" in args.special:
+                elif "lyttonPark" in args["special"]:
                     canDoLongBlockL = False
                     list.append(f"{IMG_PATH}Special-L-LyttonPark.png")
 
                 # specials on the right can overlap, tho you'll only see one
-                if "bertsPark" in args.special:
+                if "bertsPark" in args["special"]:
                     list.append(f"{IMG_PATH}Special-R-BertsPark.png")
-                if "jail" in args.special:
+                if "jail" in args["special"]:
                     list.append(f"{IMG_PATH}Special-R-Jail.png")
 
                 # ...and likewise for specials on the left
-                if "blueRoom" in args.special:
+                if "blueRoom" in args["special"]:
                     list.append(f"{IMG_PATH}Special-L-BlueRoom.png")
-                if "caffeineWino" in args.special:
+                if "caffeineWino" in args["special"]:
                     list.append(f"{IMG_PATH}Special-L-CaffeineWino.png")
-                if "commBldg" in args.special:
+                if "commBldg" in args["special"]:
                     list.append(f"{IMG_PATH}Special-L-CommBldg.png")
-                if "courthouse" in args.special:
+                if "courthouse" in args["special"]:
                     list.append(f"{IMG_PATH}Special-L-Courthouse.png")
-                if "hotel" in args.special:
+                if "hotel" in args["special"]:
                     list.append(f"{IMG_PATH}Special-L-HotelDelphoria.png")
-                if "police" in args.special:
+                if "police" in args["special"]:
                     list.append(f"{IMG_PATH}Special-L-PoliceHQ.png")
 
             # random chance of drawing one of the long-blocks on the sides
