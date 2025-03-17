@@ -1,4 +1,5 @@
 import json
+import math
 import random
 import tracery
 from tracery.modifiers import base_english
@@ -73,13 +74,7 @@ def get_text(cityParams):
         else:
             # we may have more than one special (L or R or both), so comment on a random one
             if "special" in cityParams:
-                starter = (
-                    "#"
-                    + cityParams["special"][
-                        Math.floor(random.random() * cityParams.special.length)
-                    ]
-                    + "#"
-                )
+                starter = f"#{random.choice(cityParams["special"])}#"
             else:
                 # if we get here, it's a very standard city block
                 starter = "#standardGrid#"
