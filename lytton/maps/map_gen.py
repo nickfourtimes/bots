@@ -25,6 +25,9 @@ def rand_comp(maxNum):
     return math.floor(math.random() * maxNum) + 1
 
 
+'''
+Return a list of .png paths, in the order in which they must be drawn
+'''
 async def create_city_image_list(args):
     list = []
 
@@ -62,29 +65,29 @@ async def create_city_image_list(args):
             list.push(await load_image(f"{IMG_PATH}Highway-08-0{rand_comp(3)}.png"))
 
         # ...and then, we might have one of the highways that leads out of the city
-        if args.highway.includes("tr"):
+        if "tr" in args.highway:
             list.push(await load_image(f"{IMG_PATH}Highway-TR.png"))
-        elif args.highway.includes("bl"):
+        elif "bl" in args.highway:
             list.push(await load_image(f"{IMG_PATH}Highway-BL.png"))
     else:
         if "cityLimit" in args:
-            if args.cityLimit.includes("tl"):
+            if "tl" in args.cityLimit:
                 list.push(await load_image(f"{IMG_PATH}Special-TL-CityLimit-01.png"))
-            elif args.cityLimit.includes("t"):
+            elif "t" in args.cityLimit:
                 list.push(
                     await load_image(
                         f"{IMG_PATH}Special-T-CityLimit-0{rand_comp(2)}.png"
                     )
                 )
-            elif args.cityLimit.includes("l"):
+            elif "l" in args.cityLimit:
                 list.push(await load_image(f"{IMG_PATH}Special-L-CityLimit-01.png"))
-            elif args.cityLimit.includes("r"):
+            elif "r" in args.cityLimit:
                 list.push(
                     await load_image(
                         f"{IMG_PATH}Special-R-CityLimit-0{rand_comp(2)}.png"
                     )
                 )
-            elif args.cityLimit.includes("b"):
+            elif "b" in args.cityLimit:
                 list.push(
                     await load_image(
                         f"{IMG_PATH}Special-B-CityLimit-0{rand_comp(2)}.png"
@@ -97,33 +100,33 @@ async def create_city_image_list(args):
 
             if "special" in args:
                 # these two should be mutually exclusive
-                if args.special.includes("cottonCove"):
+                if "cottonCove" in args.special:
                     canDoLongBlockR = False
                     list.push(await load_image(f"{IMG_PATH}Special-BR-CottonCove.png"))
-                elif args.special.includes("lyttonPark"):
+                elif "lyttonPark" in args.special:
                     canDoLongBlockL = False
                     list.push(await load_image(f"{IMG_PATH}Special-L-LyttonPark.png"))
 
                 # specials on the right can overlap, tho you'll only see one
-                if args.special.includes("bertsPark"):
+                if "bertsPark" in args.special:
                     list.push(await load_image(f"{IMG_PATH}Special-R-BertsPark.png"))
-                if args.special.includes("jail"):
+                if "jail" in args.special:
                     list.push(await load_image(f"{IMG_PATH}Special-R-Jail.png"))
 
                 # ...and likewise for specials on the left
-                if args.special.includes("blueRoom"):
+                if "blueRoom" in args.special:
                     list.push(await load_image(f"{IMG_PATH}Special-L-BlueRoom.png"))
-                if args.special.includes("caffeineWino"):
+                if "caffeineWino" in args.special:
                     list.push(await load_image(f"{IMG_PATH}Special-L-CaffeineWino.png"))
-                if args.special.includes("commBldg"):
+                if "commBldg" in args.special:
                     list.push(await load_image(f"{IMG_PATH}Special-L-CommBldg.png"))
-                if args.special.includes("courthouse"):
+                if "courthouse" in args.special:
                     list.push(await load_image(f"{IMG_PATH}Special-L-Courthouse.png"))
-                if args.special.includes("hotel"):
+                if "hotel" in args.special:
                     list.push(
                         await load_image(f"{IMG_PATH}Special-L-HotelDelphoria.png")
                     )
-                if args.special.includes("police"):
+                if "police" in args.special:
                     list.push(await load_image(f"{IMG_PATH}Special-L-PoliceHQ.png"))
 
             # random chance of drawing one of the long-blocks on the sides
