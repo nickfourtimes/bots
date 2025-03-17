@@ -51,31 +51,31 @@ def get_text(cityParams):
 
     elif "highway" in cityParams:
         # check if the highway leads out of the city
-        if cityParams.highway.includes("tr"):
+        if "tr" in cityParams["highway"]:
             starter = "#highway-tr#"
-        elif cityParams.highway.includes("bl"):
+        elif "bl" in cityParams["highway"]:
             starter = "#highway-bl#"
         else:
             starter = "#highway#"
 
     else:
         if "cityLimit" in cityParams:
-            if cityParams.cityLimit.includes("tl"):  # parkway drive & palm
+            if "tl" in cityParams["cityLimit"]:  # parkway drive & palm
                 starter = "#cityLimit-tl#"
-            elif cityParams.cityLimit.includes("t"):  # Xth & palm
+            elif "t" in cityParams["cityLimit"]:  # Xth & palm
                 starter = "#cityLimit-t#"
-            elif cityParams.cityLimit.includes("l"):  # parkway drive & FLOWER
+            elif "l" in cityParams["cityLimit"]:  # parkway drive & FLOWER
                 starter = "#cityLimit-l#"
-            elif cityParams.cityLimit.includes("r"):  # clear water drive & FLOWER
+            elif "r" in cityParams["cityLimit"]:  # clear water drive & FLOWER
                 starter = "#cityLimit-r#"
-            elif cityParams.cityLimit.includes("b"):  # Xth & river road
+            elif "b" in cityParams["cityLimit"]:  # Xth & river road
                 starter = "#cityLimit-b#"
         else:
             # we may have more than one special (L or R or both), so comment on a random one
             if "special" in cityParams:
                 starter = (
                     "#"
-                    + cityParams.special[
+                    + cityParams["special"][
                         Math.floor(random.random() * cityParams.special.length)
                     ]
                     + "#"
