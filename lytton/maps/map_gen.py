@@ -1,21 +1,15 @@
 import math
 import random
 
-#   Canvas = require("canvas"),
-#   loadImage = Canvas.loadImage,
-#   img_path_png = "./.data/temp.png"
+from PIL import Image
 
-# ************************************************************************* CONSTS &
-
-IMG_PATH = "./maps/components/"
+IMG_PATH = "./lytton/maps/components/"
 
 MAP_WIDTH = 320
 MAP_HEIGHT = 168
 
 NUM_HIGHWAY_COMPS = 8
 LONG_BLOCK_CHANCE = 0.2
-
-# ************************************************************************* DRAWING
 
 
 def load_image(path):
@@ -32,9 +26,6 @@ def create_city_image_list(args):
     """
 
     list = []
-
-    # the street background
-    list.append(f"{IMG_PATH}Main-Street-Pattern.png")
 
     # draw a basic, random city
     # the other components, if selected, can just draw right on top of these
@@ -56,7 +47,7 @@ def create_city_image_list(args):
         list.append(f"{IMG_PATH}Highway-Base.png")
 
         # the little bits & bobs surrounding the highways
-        for i in (0.0).NUM_HIGHWAY_COMPS:
+        for i in range(NUM_HIGHWAY_COMPS):
             list.append(f"{IMG_PATH}Highway-01-0{rand_comp(3)}.png")
             list.append(f"{IMG_PATH}Highway-02-0{rand_comp(3)}.png")
             list.append(f"{IMG_PATH}Highway-03-0{rand_comp(4)}.png")
@@ -128,33 +119,12 @@ def create_city_image_list(args):
 
 def get_image(city_params):
     img_list = create_city_image_list(city_params)
+
+    # create the basic background image
+    image = Image.open(f"{IMG_PATH}Main-Street-Pattern.png")
+
     for img_path in img_list:
-        print(f"{img_path}")
+        i = Image.open(img_path)
+        image.paste(i, i)
 
-# module.exports = async function (cityParams, res, cb) {
-#   canvas = Canvas.createCanvas(MAP_WIDTH, MAP_HEIGHT),
-#     ctx = canvas.getContext("2d")
-
-#   imgList = await createCityImageList(cityParams)
-#   for (i = 0 i < imgList.length ++i) {
-#     ctx.drawImage(imgList[i], 0, 0)
-#   }
-
-#   out = fs.createWriteStream(img_path_png)
-#   stream = canvas.createPNGStream()
-#   stream.pipe(out)
-
-#   # # uncomment this if we're just outputting the image directly in a browser
-#   # stream.pipe(res)
-#   # stream.end()
-
-#   # send the buffered image back to server.js for posting
-#   out.on("finish", function () {
-#     if (cb) {
-#       cb(null, {
-#         path: img_path_png,
-#         data: canvas.toBuffer().toString("base64"),
-#       })
-#     }
-#   })
-# }
+    image.save("new_image.png")

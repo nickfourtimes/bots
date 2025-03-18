@@ -81,6 +81,7 @@ def chooseCityParams():
 
 
 params = chooseCityParams()
+print(params)
 
 # poast!
 post = "foo"

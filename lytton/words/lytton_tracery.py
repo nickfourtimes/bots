@@ -73,7 +73,7 @@ def get_text(city_params):
         else:
             # we may have more than one special (L or R or both), so comment on a random one
             if "special" in city_params:
-                starter = f"#{random.choice(city_params["special"])}#"
+                starter = f"#{random.choice(city_params['special'])}#"
             else:
                 # if we get here, it's a very standard city block
                 starter = "#standardGrid#"
