@@ -126,7 +126,7 @@ def get_image(city_params):
         i = Image.open(img_path)
         image.paste(i, i)
 
-    image.save("new_image.png")
+    # image.save("new_image.png")
 
     imgByteArr = io.BytesIO()
     image.save(imgByteArr, format=image.format)
