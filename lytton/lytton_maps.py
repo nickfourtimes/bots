@@ -2,12 +2,11 @@ import io
 import json
 import random
 
-randint = random.randint
-
 from PIL import Image
 
-# consts
+randint = random.randint
 
+# consts
 IMG_PATH = "./lytton/maps/components/"
 NUM_HIGHWAY_COMPS = 8
 LONG_BLOCK_CHANCE = 0.2
