@@ -9,8 +9,8 @@ from atproto import Client, models
 from dotenv import load_dotenv
 from mastodon import Mastodon
 
-from lytton.map_gen import get_image
-from lytton.lytton_tracery import get_text
+from lytton.lytton_maps import get_image
+from lytton.lytton_text import get_text
 
 # get env vars
 load_dotenv()
