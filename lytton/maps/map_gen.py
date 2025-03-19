@@ -1,17 +1,22 @@
 import io
+import json
 import random
 
 randint = random.randint
 
 from PIL import Image
 
-# Constants
+# consts
 
 IMG_PATH = "./lytton/maps/components/"
-MAP_WIDTH = 320
-MAP_HEIGHT = 168
 NUM_HIGHWAY_COMPS = 8
 LONG_BLOCK_CHANCE = 0.2
+
+# config vars
+with open("./lytton/config.json") as jfile:
+    data = json.load(jfile)
+    MAP_HEIGHT = data["MAP_HEIGHT"]
+    MAP_WIDTH = data["MAP_WIDTH"]
 
 
 def create_city_image_list(args):
@@ -120,7 +125,7 @@ def get_image(city_params):
     for img_path in img_list:
         i = Image.open(img_path)
         image.paste(i, i)
-        
+
     image.save("new_image.png")
 
     imgByteArr = io.BytesIO()

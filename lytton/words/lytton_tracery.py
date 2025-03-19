@@ -9,12 +9,12 @@ with open("lytton/config.json") as jfile:
     CRISIS_PROB = data["CRISIS_PROB"]
 
 
-def lowercase(text):
-    return text.toLowerCase()
+def lowercase(text: str):
+    return text.lower()
 
 
-def uppercase(text):
-    return text.toUpperCase()
+def uppercase(text: str):
+    return text.upper()
 
 
 def get_text(city_params):
