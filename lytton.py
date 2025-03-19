@@ -95,14 +95,18 @@ try:
     bsky = Client(BSKY_BASE_URL)
     bsky.login(BSKY_USERNAME, BSKY_APP_PASSWORD)
     img_ratio = models.AppBskyEmbedDefs.AspectRatio(height=MAP_HEIGHT, width=MAP_WIDTH)
-    bsky.send_image(text=post_text, image=post_img, image_alt=post_alt, image_aspect_ratio=img_ratio)
+    bsky.send_image(
+        text=post_text, image=post_img, image_alt=post_alt, image_aspect_ratio=img_ratio
+    )
     print("Posted to Bluesky.")
 except SystemError as e:
     print(f"Error posting to Bluesky: {e}")
 
 try:
     masto = Mastodon(access_token=MASTO_ACCESS_TOKEN, api_base_url=MASTO_BASE_URL)
-    img_id = masto.media_post(media_file=post_img, mime_type="image/png", description=post_alt)
+    img_id = masto.media_post(
+        media_file=post_img, mime_type="image/png", description=post_alt
+    )
     masto.status_post(status=post_text, media_ids=[img_id])
     print("Posted to Mastodon.")
 except SystemError as e:
