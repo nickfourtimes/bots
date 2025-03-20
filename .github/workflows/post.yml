@@ -15,7 +15,7 @@ jobs:
           cache: 'poetry'
       - run: poetry install
       - name: Post to The Chambers Pot
-        run: poetry run chambers.py
+        run: poetry run python chambers.py
         env:
           BSKY_BASE_URL: ${{ secrets.BSKY_BASE_URL }}
           CHAMBERS_BSKY_HANDLE: ${{ secrets.CHAMBERS_BSKY_HANDLE }}
