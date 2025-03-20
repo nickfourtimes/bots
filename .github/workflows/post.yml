@@ -10,7 +10,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
       - name: Post to The Chambers Pot
-        run: py chambers.py
+        run: python chambers.py
         env:
           BSKY_BASE_URL: ${{ secrets.BSKY_BASE_URL }}
           CHAMBERS_BSKY_HANDLE: ${{ secrets.CHAMBERS_BSKY_HANDLE }}
