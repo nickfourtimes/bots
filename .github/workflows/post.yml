@@ -9,7 +9,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
-      - run: python chambers.py
+        with:
+          cache: 'poetry'
+      - name: Post to The Chambers Pot
+        run: python chambers.py
         env:
           BSKY_BASE_URL: ${{ secrets.BSKY_BASE_URL }}
           CHAMBERS_BSKY_HANDLE: ${{ secrets.CHAMBERS_BSKY_HANDLE }}
