@@ -7,13 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
           cache: 'poetry'
+      - run: poetry install
       - name: Post to The Chambers Pot
-        run: python chambers.py
+        run: poetry run chambers.py
         env:
           BSKY_BASE_URL: ${{ secrets.BSKY_BASE_URL }}
           CHAMBERS_BSKY_HANDLE: ${{ secrets.CHAMBERS_BSKY_HANDLE }}
