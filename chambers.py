@@ -1,6 +1,7 @@
+import json
+import math
 import os
-import requests
-import sys
+import random
 
 from atproto import Client
 from dotenv import load_dotenv
@@ -18,50 +19,72 @@ BSKY_BASE_URL = os.getenv("BSKY_BASE_URL")
 MASTO_ACCESS_TOKEN = os.getenv("CHAMBERS_MASTO_ACCESS_TOKEN")
 MASTO_BASE_URL = os.getenv("MASTO_BASE_URL")
 
+# get our words
+with open("chambers/chambers-nouns.json", "r") as noun_file:
+    noun_list = json.load(noun_file)
+with open("chambers/chambers-adjectives.json", "r") as adj_file:
+    adj_list = json.load(adj_file)
 
-def get_post():
-    wordnik_req = (
-        "http://api.wordnik.com:80/v4/words.json/randomWord?"
-        + "hasDictionaryDef=false"
-        + "&includePartOfSpeech=noun"
-        + "&minCorpusCount=5000"
-        + "&maxCorpusCount=-1"
-        + "&minDictionaryCount=1"
-        + "&maxDictionaryCount=-1"
-        + "&minLength=4"
-        + "&maxLength=100"
-        + "&api_key="
-        + os.getenv("WORDNIK_API_KEY")
-    )
 
-    response = requests.get(wordnik_req)
+def to_title_case(str: str):
+    return f"{str[0].upper()}{str[1:].lower()}"
 
-    try:
-        response = requests.get(wordnik_req)
-        response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        raise SystemExit(e)
 
-    # todo better error handling
-    if response.status_code != 200 or response.json == "":
-        print(f"wordnik error: {response.raise_for_status()}", file=sys.stderr)
-    else:
-        answer = response.json()["word"]
+def get_preamble():
+    options = ["*cracks knuckles*", "hm.", "how about...", "could it be..."]
 
-        # get the correct article
-        article = "A"
-        first = answer[0]
-        if first == "a" or first == "e" or first == "i" or first == "o" or first == "u":
-            article = "An"
+    return random.choice(options)
 
-        # *** THIS IS THE POST TEXT ***
-        post_text = f"{article} {answer} is NOT podracing."
-        print(f"Post text: {post_text}")
-        return post_text
+
+def get_title():
+    n1 = random.choice(noun_list["nouns"])
+    n2 = random.choice(noun_list["nouns"])
+    a1 = random.choice(adj_list["adjs"])
+
+    # caps
+    n1 = to_title_case(n1)
+    n2 = to_title_case(n2)
+    a1 = to_title_case(a1)
+
+    # get the correct article
+    article = "A"
+    vowels = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"]
+    first = n1[0]
+    if any(vowel in first for vowel in vowels):
+        article = "An"
+
+    return f"{article} {n1} for the {n2}-{a1}"
+
+
+def get_postamble():
+    options = ["*crumples paper*", "*sips coffee*", "sigh."]
+
+    return random.choice(options)
+
+
+def compose_post():
+    post = ""
+
+    v = random.random()
+
+    # random chance of preamble
+    if v < 0.33333 or v > 0.66667:
+        post += f"{get_preamble()}\n\n"
+
+    # the actual name of the book
+    post += f'"{get_title()}"'
+
+    # random chance of postamble
+    if v > 0.33333:
+        post += f"\n\n{get_postamble()}"
+
+    # console.log(post)
+
+    return post
 
 
 # poast!
-post = get_post()
+post = compose_post()
 
 try:
     bsky = Client(BSKY_BASE_URL)
