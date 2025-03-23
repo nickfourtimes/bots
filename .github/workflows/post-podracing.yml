@@ -1,0 +1,25 @@
+name: "Now This Is Podracing"
+
+on: workflow_dispatch
+
+jobs:
+  post_podracing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          cache: "poetry"
+      - run: poetry install
+      - name: Post to Not Podracing
+        run: poetry run python not-podracing.py
+        env:
+          BSKY_BASE_URL: ${{ secrets.BSKY_BASE_URL }}
+          MASTO_BASE_URL: ${{ secrets.MASTO_BASE_URL }}
+          PODRACING_BSKY_HANDLE: ${{ secrets.PODRACING_BSKY_HANDLE }}
+          PODRACING_BSKY_PASSWORD: ${{ secrets.PODRACING_BSKY_PASSWORD }}
+          PODRACING_MASTO_ACCESS_TOKEN: ${{ secrets.PODRACING_MASTO_ACCESS_TOKEN }}
+          WORDNIK_API_KEY: ${{ secrets.WORDNIK_API_KEY }}

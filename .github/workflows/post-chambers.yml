@@ -1,0 +1,24 @@
+name: "The Chambers Pot"
+
+on: workflow_dispatch
+
+jobs:
+  post_chambers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          cache: "poetry"
+      - run: poetry install
+      - name: Post to The Chambers Pot
+        run: poetry run python chambers.py
+        env:
+          BSKY_BASE_URL: ${{ secrets.BSKY_BASE_URL }}
+          CHAMBERS_BSKY_HANDLE: ${{ secrets.CHAMBERS_BSKY_HANDLE }}
+          CHAMBERS_BSKY_PASSWORD: ${{ secrets.CHAMBERS_BSKY_PASSWORD }}
+          CHAMBERS_MASTO_ACCESS_TOKEN: ${{ secrets.CHAMBERS_MASTO_ACCESS_TOKEN }}
+          MASTO_BASE_URL: ${{ secrets.MASTO_BASE_URL }}
