@@ -1,11 +1,14 @@
 name: "🕰 Trigger bots"
 
 on:
-  schedule:
-    - cron: "19 * * * *"
+    workflow_dispatch
+#   schedule:
+#     - cron: "19 * * * *"
 
 jobs:
   increment_vars:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: "Increment vars"
+        run: $CHAMBERS_CHECK = $CHAMBERS_CHECK + 1 && $LYTTON_CHECK = $LYTTON_CHECK + 1 && $PODRACING_CHECK = $PODRACING_CHECK + 1
