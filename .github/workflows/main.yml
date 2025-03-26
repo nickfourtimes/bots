@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: "Increment vars"
-        run: echo "$CHAMBERS_CHECK + 1" >> "$CHAMBERS_CHECK" && echo "$LYTTON_CHECK + 1" >> "$LYTTON_CHECK" && echo "$PODRACING_CHECK + 1" >> "$PODRACING_CHECK"
+        run: CHAMBERS_CHECK=$(($CHAMBERS_CHECK + 1)) && LYTTON_CHECK=$(($LYTTON_CHECK + 1)) && PODRACING_CHECK=$(($PODRACING_CHECK + 1))
