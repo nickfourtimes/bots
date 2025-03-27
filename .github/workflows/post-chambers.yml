@@ -2,11 +2,19 @@ name: "📚 The Chambers Pot"
 
 on: workflow_dispatch
 
+env:
+  RUN_TIMING: 7
+
 jobs:
   post_chambers:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Evaluate timing
+        run: |
+          echo "RUN_ID=$((${{ github.run_number }} % $RUN_TIMING))" >> "$GITHUB_ENV"
+          echo $RUN_ID
+          success()
       - name: Install poetry
         run: pipx install poetry
       - name: Set up Python
