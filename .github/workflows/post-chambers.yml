@@ -13,8 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Evaluate timing
         run: |
-          echo "RUN_ID=$((${{ github.run_number }} % ${{ env.RUN_TIMING }}))" >> "$GITHUB_ENV"
-          echo ${{ env.RUN_ID }}
+          echo "RUN_ID=$((${{ env.RUN_TIMING }} % ${{ github.run_number }}))" >> "$GITHUB_ENV"
       - name: Install poetry
         if: env.RUN_ID == 0
         run: pipx install poetry
