@@ -10,6 +10,12 @@ jobs:
   post_chambers:
     runs-on: ubuntu-latest
     steps:
+      - name: Reset run number
+        if: ${{ github.run_number }} > 5
+        uses: mlilback/build-number@v1
+        with:
+          base: 0
+          run-id: 0
       - uses: actions/checkout@v4
       - name: Evaluate timing
         run: |
@@ -34,3 +40,4 @@ jobs:
           CHAMBERS_BSKY_PASSWORD: ${{ secrets.CHAMBERS_BSKY_PASSWORD }}
           CHAMBERS_MASTO_ACCESS_TOKEN: ${{ secrets.CHAMBERS_MASTO_ACCESS_TOKEN }}
           MASTO_BASE_URL: ${{ secrets.MASTO_BASE_URL }}
+
