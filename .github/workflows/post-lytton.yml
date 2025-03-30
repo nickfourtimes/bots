@@ -1,20 +1,34 @@
 name: "📰 The Lytton Tribune"
 
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: "38 */3 * * *"
+
+env:
+  RUN_ID: -1
+  RUN_TIMING: 5
 
 jobs:
   post_lytton:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Evaluate timing
+        run: |
+          echo "RUN_ID=$((${{ github.run_number }} % $RUN_TIMING))" >> "$GITHUB_ENV"
       - name: Install poetry
+        if: env.RUN_ID == 0
         run: pipx install poetry
       - name: Set up Python
+        if: env.RUN_ID == 0
         uses: actions/setup-python@v5
         with:
           cache: "poetry"
-      - run: poetry install
+      - name: Set up poetry
+        if: env.RUN_ID == 0
+        run: poetry install
       - name: Post to The Lytton Tribune
+        if: env.RUN_ID == 0
         run: poetry run python lytton.py
         env:
           BSKY_BASE_URL: ${{ secrets.BSKY_BASE_URL }}
