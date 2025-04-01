@@ -1,6 +1,5 @@
 import os
 import json
-import math
 import random
 
 rand = random.random
