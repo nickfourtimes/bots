@@ -79,6 +79,7 @@ def compose_post():
 
 # poast!
 post = compose_post()
+# print(post)
 
 try:
     bsky = Client(BSKY_BASE_URL)

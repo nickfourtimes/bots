@@ -49,19 +49,20 @@ def get_post():
         answer = response.json()["word"]
 
         # get the correct article
-        article = "A"
-        first = answer[0]
-        if first == "a" or first == "e" or first == "i" or first == "o" or first == "u":
+        vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"]
+        if answer[0] in vowels:
             article = "An"
+        else:
+            article = "A"
 
         # *** THIS IS THE POST TEXT ***
         post_text = f"{article} {answer} is NOT podracing."
-        print(f"Post text: {post_text}")
         return post_text
 
 
 # poast!
 post = get_post()
+# print(post)
 
 try:
     bsky = Client(BSKY_BASE_URL)
