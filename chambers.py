@@ -28,7 +28,6 @@ with open("chambers/chambers-adjectives.json", "r") as adj_file:
 
 def get_preamble():
     options = ["*cracks knuckles*", "hm.", "how about...", "could it be..."]
-
     return random.choice(options)
 
 
@@ -54,7 +53,6 @@ def get_title():
 
 def get_postamble():
     options = ["*crumples paper*", "*sips coffee*", "sigh."]
-
     return random.choice(options)
 
 
