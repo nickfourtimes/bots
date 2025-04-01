@@ -1,7 +1,7 @@
 import json
-import math
 import os
 import random
+import string
 
 from atproto import Client
 from dotenv import load_dotenv
@@ -26,10 +26,6 @@ with open("chambers/chambers-adjectives.json", "r") as adj_file:
     adj_list = json.load(adj_file)
 
 
-def to_title_case(str: str):
-    return f"{str[0].upper()}{str[1:].lower()}"
-
-
 def get_preamble():
     options = ["*cracks knuckles*", "hm.", "how about...", "could it be..."]
 
@@ -42,9 +38,9 @@ def get_title():
     a1 = random.choice(adj_list["adjs"])
 
     # caps
-    n1 = to_title_case(n1)
-    n2 = to_title_case(n2)
-    a1 = to_title_case(a1)
+    n1 = string.capwords(n1)
+    n2 = string.capwords(n2)
+    a1 = string.capwords(a1)
 
     # get the correct article
     article = "A"
