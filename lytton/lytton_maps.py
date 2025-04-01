@@ -121,12 +121,14 @@ def get_image(city_params):
     # create the basic background image
     image = Image.open(f"{IMG_PATH}Main-Street-Pattern.png")
 
+    # go through our list of components and paste them onto our map
     for img_path in img_list:
         i = Image.open(img_path)
         image.paste(i, i)
 
     # image.save("new_image.png")
 
+    # save it to a format we can then post
     imgByteArr = io.BytesIO()
     image.save(imgByteArr, format=image.format)
     imgByteArr = imgByteArr.getvalue()
