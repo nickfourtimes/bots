@@ -1,9 +1,3 @@
-# legacy node stuff, will get rid of eventually
-node_modules
-
-# IDE junk
-.idea
-
 # Python junk
 __pycache__
 
