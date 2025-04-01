@@ -42,7 +42,7 @@ def chooseCityParams():
     if rand() < HIGHWAY_PROB:
         # 25% chance, each, of top-right or bottom-left 50% chance of straight through
         opt = ["tr", "bl", "nil", "nil"]
-        args["highway"] = opt[math.floor(rand() * len(opt))]
+        args["highway"] = random.choice(opt)
 
     else:  # not a highway...
 
@@ -50,8 +50,7 @@ def chooseCityParams():
         if rand() < CITY_LIMIT_PROB:
             # randomly choose a city limit
             opt = ["tl", "t", "l", "r", "b"]
-            choice = opt[math.floor(rand() * len(opt))]
-            args["cityLimit"] = choice
+            args["cityLimit"] = random.choice(opt)
 
         # maybe there are special buildings!
         if rand() < SPECIAL_PROB:
@@ -68,25 +67,27 @@ def chooseCityParams():
                 "police",
             ]
 
-            # we'll either have a special left, or right, or both
+            # we'll either have a special left, special right, or both
             all_special = []
             rnd = rand()
             if rnd > 0.667:
-                all_special.append(specialL[math.floor(rand() * len(specialL))])
+                all_special.append(random.choice(specialL))
             elif rnd > 0.333:
-                all_special.append(specialR[math.floor(rand() * len(specialR))])
+                all_special.append(random.choice(specialR))
             else:
-                all_special.append(specialR[math.floor(rand() * len(specialR))])
-                all_special.append(specialL[math.floor(rand() * len(specialL))])
+                all_special.append(random.choice(specialR))
+                all_special.append(random.choice(specialL))
 
             args["special"] = all_special
 
     return args
 
 
+# define the city parameters
 params = chooseCityParams()
 print(params)
 
+# get all the components of a post (text, image, alt-text)
 post_text = get_text(params)
 post_img = get_image(params)
 post_alt = "A randomly-generated map of Lytton, CA"
