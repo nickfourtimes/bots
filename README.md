@@ -20,6 +20,8 @@ The redemption of Sonny Bonds.
 
 [mastodon](https://mastodon.social/@TheLyttonTribune) // [bsky](https://bsky.app/profile/lytton.nicknicknicknick.net)
 
+(read more about this project [here](https://nicknicknicknick.net/notes/2024/05/28/bot-the-lytton-tribune.html))
+
 ### Not Podracing
 
 Is it podracing? Well, is it?
