@@ -8,13 +8,13 @@ For a more complete listing of projects, see [this page](https://nicknicknicknic
 
 Currently hosted on GitHub, we have...
 
-### The Chambers Pot
+### 📝 The Chambers Pot
 
 Brainstorming Becky Chambers' next Monk & Robot novel.
 
 [mastodon](https://mastodon.social/@the_chambers_pot) // [bsky](https://bsky.app/profile/chambers.nicknicknicknick.net)
 
-### The Lytton Tribune
+### 📰 The Lytton Tribune
 
 The redemption of Sonny Bonds.
 
@@ -22,7 +22,7 @@ The redemption of Sonny Bonds.
 
 (read more about this project [here](https://nicknicknicknick.net/notes/2024/05/28/bot-the-lytton-tribune.html))
 
-### Not Podracing
+### 🏁 Not Podracing
 
 Is it podracing? Well, is it?
 
